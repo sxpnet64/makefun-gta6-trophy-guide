@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI · PS5</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: checklist, platinum roadmap, missable warnings, and cited guides.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff5da2'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Unofficial fan guide</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 trophies, a platinum roadmap, and a tracker that remembers your progress — offline, in your browser.</p>
+  </div>
+  <div class="hero-stats" id="heroStats" aria-label="Trophy list facts"></div>
+</header>
+
+<section class="progress" aria-label="Your progress">
+  <div class="progress-line">
+    <strong id="progressText">0 of 55 earned</strong>
+    <span id="progressByGrade"></span>
+  </div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+  <p class="progress-note" id="progressNote"></p>
+</section>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" class="tab active" data-view="checklist" id="tabChecklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap" id="tabRoadmap">Platinum roadmap</button>
+  <button type="button" class="tab" data-view="sources" id="tabSources">Sources</button>
+</nav>
+
+<section class="toolbar" id="toolbar" aria-label="Filters and tools">
+  <label class="search">Search
+    <input type="search" id="search" placeholder="Trophy name, mission, or keyword…" autocomplete="off">
+  </label>
+  <div class="chips" id="kindChips" role="group" aria-label="Filter by kind"></div>
+  <label class="select">Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="select">Difficulty
+    <select id="difficultyFilter">
+      <option value="all">Any difficulty</option>
+      <option value="easy">Easy (1–2)</option>
+      <option value="medium">Medium (3)</option>
+      <option value="hard">Hard (4–5)</option>
+    </select>
+  </label>
+  <label class="toggle"><input type="checkbox" id="spoilerToggle" checked> Hide story spoilers</label>
+  <label class="toggle"><input type="checkbox" id="earnedOnly"> Earned only</label>
+  <div class="tools">
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="importBtn">Import progress <input type="file" id="importInput" accept="application/json,.json"></label>
+    <button type="button" id="resetBtn">Reset</button>
+  </div>
+</section>
+
+<main>
+  <section id="viewChecklist" class="view">
+    <div class="layout">
+      <div class="list-col">
+        <p class="list-meta" id="listMeta"></p>
+        <ul class="trophy-list" id="trophyList"></ul>
+        <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or picking another kind — and note there are no online trophies in this game: every one of the 55 is single-player.</p>
+      </div>
+      <aside class="detail-col" id="detailCol" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="viewRoadmap" class="view" hidden>
+    <div class="roadmap-intro" id="roadmapIntro"></div>
+    <ol class="roadmap" id="roadmapList"></ol>
+    <p class="fineprint">Roadmap order is built from the official trophy descriptions and the cited guides: story chapters first, then the 100% Completion Checklist, then Strangers &amp; Freaks clean-up, then the platinum.</p>
+  </section>
+
+  <section id="viewSources" class="view" hidden>
+    <h2>Where every fact comes from</h2>
+    <p>The trophy names, descriptions and grades are the official PlayStation 5 list as mirrored by PSNProfiles and Exophase, cross-checked against the guides below on 2026-11-20. The guide text on this page is written in our own words; each trophy names the guide its facts come from, and nothing is copied from those guides. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+    <ul class="source-list" id="sourceList"></ul>
+    <h3>How we handle uncertain facts</h3>
+    <p>One trophy, <strong>Bad Luck, I Guess</strong>, has no confirmed unlock method in any major guide yet — its entry says so plainly instead of guessing. The Chapter 1 meditation for <strong>Positive Mental Attitude</strong> is flagged as <em>potentially</em> missable because guides disagree on whether it is required. Counts such as 42 shooting-range golds, 14 drone-race locations and 18 meditation spots are the numbers the cited guides report.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive, or Sony Interactive Entertainment. No Rockstar logos, artwork, box art, or game screenshots are used here; the look is our own.</p>
+  <p>Works fully offline: every file this page loads lives in its own folder, and your progress is stored only in this browser (localStorage). Export it to keep a backup.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
